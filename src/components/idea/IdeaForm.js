@@ -3,8 +3,8 @@ import React, { Component } from "react"
 export default class IdeaForm extends Component {
     // Set initial state
     state = {
-        Name: "",
         idea: "",
+       
         
     }
 
@@ -22,8 +22,8 @@ export default class IdeaForm extends Component {
     constructNewIdea = evt => {
         evt.preventDefault()
             const idea = {
-                name: this.state.name,
                 idea: this.state.idea,
+                time: this.state.time,
                 userId: this.state.userId
             }
 
@@ -34,12 +34,24 @@ export default class IdeaForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <form>
-                  <label for="exampleText">Idea 1</label>
-                    <input type="textarea" name="text" id="exampleText" />
-                    </form>
+                <form className="ideaForm">
+                    <div className="form-group">
+                        <label htmlFor="taskName">What is your Task?</label>
+                        <input type="text" required
+                               className="form-control"
+                               onChange={this.handleFieldChange}
+                               id="idea"
+                               placeholder="anything " />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="dueDate">When do you need to complete it?</label>
+                        <input type="date" required
+                               className="form-control"
+                               onChange={this.handleFieldChange}
+                               id="time" placeholder="Date" />
+                    </div>
                     <button type="submit" onClick={this.constructNewIdea} className="btn btn-primary">Add Idea</button>
-                
+                </form>
             </React.Fragment>
         )
     }
