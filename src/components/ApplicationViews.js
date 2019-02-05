@@ -53,12 +53,9 @@ export default class ApplicationViews extends Component {
                         return <IdeaForm {...props} addIdea={this.addIdea} />
                     }}
                 />
-                <Route
-          exact 
-          path="/idea" render={props => {
-            return <IdeaList {...props} idea = { this.state.idea} />
-          }}
-                />
+               <Route exact path="/idea" render={(props) => {
+    return <IdeaList deleteIdea={this.deleteIdea} idea={this.state.idea} />
+}} />
             </React.Fragment>
         )
     }
