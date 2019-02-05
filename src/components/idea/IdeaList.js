@@ -9,8 +9,8 @@ export default class IdeaList extends Component {
                 <div key={idea.id} className="card">
                 <div className="card-body">
             
-                  {idea.idea}
-                  {idea.time}
+                 <h3>{idea.idea} </h3><br></br>
+                  {idea.time}<br></br>
                   <a href="#"
                   onClick={() => this.props.deleteIdea(idea.id)} 
                   className="card-link">Delete</a>
