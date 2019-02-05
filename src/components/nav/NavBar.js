@@ -11,7 +11,7 @@ class NavBar extends Component {
             <nav className="navbar navbar-dark  light-grey flex-md-nowrap p-0 shadow">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Home</Link>
+                        <Link className="nav-link" to="/idea">Home</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="messages">/ Messages</Link>
